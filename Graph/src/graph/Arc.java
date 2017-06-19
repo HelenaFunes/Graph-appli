@@ -31,6 +31,13 @@ public class Arc {
         this.som2 = a.getSom2();
         this.valeur = a.getValeur();
     }
+    
+    public Arc(Ville v1, Ville v2){
+        this.som1 = new Sommet(v1);
+        this.som2 = new Sommet(v2);
+        this.valeur = v1.getDistance(v2);
+    }
+    
 
     public Sommet getSom1() {
         return som1;
@@ -58,8 +65,12 @@ public class Arc {
     
     @Override
     public String toString(){
-        return "Arc reliant " + this.getSom1().getNom() + " à " + this.getSom2().getNom() + " de valeur " + this.getValeur();
+        return "Arc reliant " + this.getSom1().getNom() + " à " + this.getSom2().getNom() + " de valeur " + this.getValeur() + " mètres";
     }
     
+    public Boolean equals(Arc a){
+        return (som1.equals(a.getSom1()) && som2.equals(a.getSom2()) && valeur == a.getValeur())
+                || (som1.equals(a.getSom2()) && som2.equals(a.getSom1()) && valeur == a.getValeur());
+    }
     
 }

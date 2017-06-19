@@ -5,6 +5,8 @@
  */
 package graph;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Héléna
@@ -26,7 +28,9 @@ public class Graph {
 //        System.out.println(g.toString());
 
           CSVReader reader = new CSVReader();
-          reader.getFromCSV();
+          ArrayList<Ville> villes = reader.getFromCSV(400000);
+          System.out.println(villes.get(0).getDistance(villes.get(1)));
+          Graphe g = new Graphe(villes, 100000000);
     }
     
 }

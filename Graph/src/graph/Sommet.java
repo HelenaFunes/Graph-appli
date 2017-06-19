@@ -11,13 +11,19 @@ package graph;
  */
 public class Sommet {
     private String nom;
-    private int latitude;
-    private int longitude;
+    private float latitude;
+    private float longitude;
 
-    public Sommet(String nom, int latitude, int longitude) {
+    public Sommet(String nom, float latitude, float longitude) {
         this.nom = nom;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+    
+    public Sommet(Ville v){
+        this.nom = v.getNom();
+        this.latitude = v.getLatitude();
+        this.longitude = v.getLongitude();
     }
 
     public Sommet(String nom) {
@@ -33,20 +39,29 @@ public class Sommet {
     }
     
     
-    public int getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
+    }
+    
+    public Boolean equals(Sommet s){
+        if (nom.equals(s.getNom()) || longitude == s.getLongitude() || latitude == s.getLatitude()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     

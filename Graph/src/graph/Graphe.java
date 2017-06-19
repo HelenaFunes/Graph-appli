@@ -46,6 +46,38 @@ public class Graphe {
         }
         System.out.println(listeSommets.size());
     }
+    /**
+     * La distance est en metres 
+     * @param villes
+     * @param dist 
+     */
+    public Graphe(ArrayList<Ville> villes, int dist){
+        listeSommets = new ArrayList<Sommet> ();
+        listeArcs = new ArrayList<Arc> ();
+        for(int i = 0; i<villes.size(); i++){
+            Ville v =villes.get(i);
+            Sommet som = new Sommet(v);
+            if(!listeSommets.contains(som)){
+                listeSommets.add(som);
+                for (int k = 0; k<villes.size(); k++){
+                    if(!v.equals(villes.get(k)) 
+                            && v.getDistance(villes.get(k)) <=dist){
+                        Arc arc = new Arc(v, villes.get(k));
+                        Boolean dedans = false;
+                        for(int j = 0; j<listeArcs.size(); j++){
+                            if(arc.equals(listeArcs.get(j))){
+                                dedans = true;
+                            }
+                        }
+                        if(!dedans){
+                            listeArcs.add(arc);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println(toString());
+    }
       
     public void addSommet(Sommet A){
         if(!listeSommets.isEmpty()){
