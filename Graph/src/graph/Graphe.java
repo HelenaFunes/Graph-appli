@@ -10,16 +10,16 @@ package graph;
  * @author Axel
  */
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class Graphe {
-   private LinkedList<Sommet> listeSommets; //= new LinkedList<Sommet> ();
-   private LinkedList<Arc> listeArcs; //= new LinkedList<Arc> ();
+   private ArrayList<Sommet> listeSommets; //= new ArrayList<Sommet> ();
+   private ArrayList<Arc> listeArcs; //= new ArrayList<Arc> ();
 
     public Graphe(Arc[] arcs , Sommet[] sommets){
-        listeSommets = new LinkedList<Sommet> ();
-        listeArcs = new LinkedList<Arc> ();
+        listeSommets = new ArrayList<Sommet> ();
+        listeArcs = new ArrayList<Arc> ();
         int n = sommets.length;
         int m = arcs.length;
         listeSommets.add(sommets[0]);
