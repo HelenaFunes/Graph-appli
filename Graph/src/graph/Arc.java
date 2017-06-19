@@ -73,4 +73,18 @@ public class Arc {
                 || (som1.equals(a.getSom2()) && som2.equals(a.getSom1()) && valeur == a.getValeur());
     }
     
+    public Boolean inArc(Sommet s){
+        return som1.equals(s) || som2.equals(s);
+    }
+    
+    public Sommet otherSom(Sommet s){
+        if (som1.equals(s)){
+            return som2;
+        }else if(som2.equals(s)){
+            return som1;
+        }else{
+            return null;
+        }
+    }
+    
 }

@@ -28,9 +28,11 @@ public class Graph {
 //        System.out.println(g.toString());
 
           CSVReader reader = new CSVReader();
-          ArrayList<Ville> villes = reader.getFromCSV(400000);
+          ArrayList<Ville> villes = reader.getFromCSV(40000);
           System.out.println(villes.get(0).getDistance(villes.get(1)));
-          Graphe g = new Graphe(villes, 100000000);
+          Graphe g = new Graphe(villes, 100000);
+          Matrice mat = new Matrice(g);
+          mat.printMat();
     }
     
 }

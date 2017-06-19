@@ -47,7 +47,7 @@ public class Graphe {
         System.out.println(listeSommets.size());
     }
     /**
-     * La distance est en metres 
+     * La distance est en metres. Elle délimite la distance à laquelle on fait un arc
      * @param villes
      * @param dist 
      */
@@ -77,6 +77,10 @@ public class Graphe {
             }
         }
         System.out.println(toString());
+    }
+    
+    public Graphe(ArrayList<Ville> villes){
+        this(villes, 0);
     }
       
     public void addSommet(Sommet A){
@@ -108,6 +112,13 @@ public class Graphe {
     public Object[] getSommets(){
          return listeSommets.toArray();
     }
+    
+    public ArrayList<Sommet> getListSom(){
+        return listeSommets;
+    }
+    public ArrayList<Arc> getListArc(){
+        return listeArcs;
+    }
 
     public Object[] getArcs(){
         return listeArcs.toArray();
@@ -128,82 +139,3 @@ public class Graphe {
         }
 }
 
-
-//public class Graphe {
-//    private Sommet[] sommets;
-//    private Arc[] arcs;
-//    private int[][] mat;
-//
-//    public Graphe(Sommet[] sommets, Arc[] arcs) {
-//        this.sommets = sommets;
-//        this.arcs = arcs;
-//        this.mat = null;
-//    }
-//    
-//    public void creeMat(){
-//        int n = sommets.length;
-//        int m = arcs.length;
-//        int [][] matrice = new int[n][n];
-//        int val = -1;
-//        boolean marque;
-//        for (int i =0; i<n; i++){
-//            marque = false;
-//            for (int j = 0; j<m; j++){
-//                if (i == j){
-//                    matrice[i][j] = 0;
-//                    marque = true;
-//                }else if((arcs[j].getSom1() == sommets[i] || arcs[j].getSom2() == sommets[i]) && !marque){
-//                    matrice[i][j] = arcs[j].getValeur();
-//                    marque = true;
-//                }
-//            }
-//            if (!marque){
-//                
-//            }
-//            
-//        }
-//        setMat(matrice);
-//        
-//    }
-//
-//    public Sommet[] getSommets() {
-//        return sommets;
-//    }
-//
-//    public void setSommets(Sommet[] sommets) {
-//        this.sommets = sommets;
-//    }
-//
-//    public Arc[] getArcs() {
-//        return arcs;
-//    }
-//
-//    public void setArcs(Arc[] arcs) {
-//        this.arcs = arcs;
-//    }
-//
-//    public int[][] getMat() {
-//        return mat;
-//    }
-//
-//    public void setMat(int[][] mat) {
-//        this.mat = mat;
-//    }
-//    
-//    public void printGraphe(){
-//        int n = sommets.length;
-//        int m = arcs.length;
-//        System.out.println("Le graphe est :");
-//        for (int i =0; i<n; i++){
-//            System.out.print("Sommet "+ i + " " + sommets[i].getNom());
-//            for (int j = 0; j<n; j++){
-//                System.out.print(" " + mat[i][j]);
-//            }
-//            System.out.println(" ");
-//        }
-//    }
-//    
-//    
-// 
-//    
-//}
