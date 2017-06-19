@@ -21,7 +21,7 @@ public class Sommet {
     }
     
     public Sommet(Ville v){
-        this.nom = v.getNom();
+        this.nom = v.getId();
         this.latitude = v.getLatitude();
         this.longitude = v.getLongitude();
     }
