@@ -69,7 +69,7 @@ public class Sommet {
     }
     
     public Boolean isNom(String nm){
-        if(nom == nm){
+        if(nom.equals(nm)){
             return true;
         }
         return false;

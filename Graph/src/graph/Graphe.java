@@ -126,11 +126,12 @@ public class Graphe {
 
    @Override
     public String toString(){
-        StringBuffer texte = new StringBuffer("*** graphe ***\n");
+        StringBuffer texte = new StringBuffer("****** graphe ******\n" + "**Villes**\n");
         for (int i=0; i<listeSommets.size();i++){
             Sommet noeudCourant = listeSommets.get(i);
             texte.append(noeudCourant.getNom()+"\n" );
         }
+        texte.append("**Arcs**\n");
         for (Arc a : listeArcs){
              Arc arcCourant = a;
             texte.append(arcCourant.toString()+"\n" );

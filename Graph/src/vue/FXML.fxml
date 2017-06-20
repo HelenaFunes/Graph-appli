@@ -27,7 +27,7 @@
             <Label alignment="CENTER" layoutX="460.0" layoutY="2.0" prefHeight="25.0" prefWidth="149.0" text="Sommet d'arrivé" />
             <Button fx:id="affSimple" layoutX="192.0" layoutY="60.0" mnemonicParsing="false" onAction="#handlebutaffSimpleAction" prefHeight="33.0" prefWidth="258.0" text="Affichage sans graphe du plus court chemin" />
             <TextArea fx:id="textChem" layoutX="53.0" layoutY="103.0" prefHeight="67.0" prefWidth="538.0" promptText="Ici s'affichera le plus court chemin" />
-            <Button fx:id="affGraph" layoutX="78.0" layoutY="170.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="490.0" text="Affichage du graphe avec le plus court chemin en rouge" />
+            <Button fx:id="affGraph" layoutX="78.0" layoutY="170.0" mnemonicParsing="false" onAction="#handlebutaffDijAction" prefHeight="47.0" prefWidth="490.0" text="Affichage du graphe avec le plus court chemin en rouge" />
             <ComboBox fx:id="choiceDep" layoutX="30.0" layoutY="27.0" prefWidth="150.0" promptText="Ville de départ" />
             <ComboBox fx:id="choiceFin" layoutX="461.0" layoutY="24.0" prefWidth="150.0" promptText="Ville d'arrivée" />
          </children>

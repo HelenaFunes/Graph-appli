@@ -124,29 +124,21 @@ public class FXMLController implements Initializable {
         if(graphok){
             Matrice mat = new Matrice(g);
             Dijkstra dij = new Dijkstra(mat);
-            Sommet s1;
-            Sommet s2;
-            for (int i=0; i<mat.getSommets().size(); i++){
-                if(mat.getSommets().get(i).isNom(choiceDep.getValue())){
-                    s1 = mat.getSommets().get(i);
-                }
-                if(mat.getSommets().get(i).isNom(choiceFin.getValue())){
-                    s2 = mat.getSommets().get(i);
-                }
-            }
-            dij.Chemin(mat.getSommets().get(0) , mat.getSommets().get(10));
+            ArrayList<Sommet> chem =dij.Chemin(mat.getSommetbyName(choiceDep.getValue()) , mat.getSommetbyName(choiceFin.getValue()));
             String rep = dij.printChemin();
             textChem.appendText(rep+"\n");
-            String val = "C'est une chemin qui mesure" + dij.valPlusCourtChemin();
-        }else if(!isInteger(textPop.getText())){
-            error.setText("La population n'est pas un int");
-        }else if(Integer.parseInt(textPop.getText())>2243833){
-            error.setText("Population supérieure à celle de la ville de Paris");
-        }else if(!isInteger(textDist.getText())){
-            error.setText("La distance n'est pas un int");
-        }else if(Integer.parseInt(textDist.getText())>40075000){
-            error.setText("Distance supérieure au contour de la Terre");
+            String val = "C'est une chemin qui mesure " + dij.valPlusCourtChemin();
+            textChem.appendText(val+"\n");
         }else {
+            if(!isInteger(textPop.getText())){
+                error.setText("La population n'est pas un int");
+            }else if(Integer.parseInt(textPop.getText())>2243833){
+                error.setText("Population supérieure à celle de la ville de Paris");
+            }else if(!isInteger(textDist.getText())){
+                error.setText("La distance n'est pas un int");
+            }else if(Integer.parseInt(textDist.getText())>40075000){
+            error.setText("Distance supérieure au contour de la Terre");
+            }else {
             CSVReader reader = new CSVReader();
             ArrayList<Ville> villes = reader.getFromCSV(Integer.parseInt(textPop.getText()));
             System.out.println("Avant création graphe");
@@ -154,8 +146,57 @@ public class FXMLController implements Initializable {
             System.out.println("Après création graphe");
             Matrice mat = new Matrice(g);
             Dijkstra dij = new Dijkstra(mat);
-            //choix de départ
-            //dij.Chemin(choiceDep);
+            dij.Chemin(mat.getSommetbyName(choiceDep.getValue()) , mat.getSommetbyName(choiceFin.getValue()));
+            String rep = dij.printChemin();
+            textChem.appendText(rep+"\n");
+            String val = "C'est une chemin qui mesure" + dij.valPlusCourtChemin();
+            textChem.appendText(val);
+            
+            }
+        }
+            
+    }
+    
+    @FXML
+    private void handlebutaffDijAction(ActionEvent event) {
+        if(graphok){
+            Matrice mat = new Matrice(g);
+            Dijkstra dij = new Dijkstra(mat);
+            ArrayList<Sommet> chem =dij.Chemin(mat.getSommetbyName(choiceDep.getValue()) , mat.getSommetbyName(choiceFin.getValue()));
+            String rep = dij.printChemin();
+            textChem.appendText(rep+"\n");
+            String val = "C'est une chemin qui mesure " + dij.valPlusCourtChemin();
+            textChem.appendText(val);
+            visuGraph vg = new visuGraph(g);
+            if(chem ==null){
+                vg.afficher();
+            }else{
+                vg.afficher(chem);
+            }
+        }else {
+            if(!isInteger(textPop.getText())){
+                error.setText("La population n'est pas un int");
+            }else if(Integer.parseInt(textPop.getText())>2243833){
+                error.setText("Population supérieure à celle de la ville de Paris");
+            }else if(!isInteger(textDist.getText())){
+                error.setText("La distance n'est pas un int");
+            }else if(Integer.parseInt(textDist.getText())>40075000){
+            error.setText("Distance supérieure au contour de la Terre");
+            }else {
+            CSVReader reader = new CSVReader();
+            ArrayList<Ville> villes = reader.getFromCSV(Integer.parseInt(textPop.getText()));
+            System.out.println("Avant création graphe");
+            g = new Graphe(villes, Integer.parseInt(textDist.getText()));
+            System.out.println("Après création graphe");
+            Matrice mat = new Matrice(g);
+            Dijkstra dij = new Dijkstra(mat);
+            dij.Chemin(mat.getSommetbyName(choiceDep.getValue()) , mat.getSommetbyName(choiceFin.getValue()));
+            String rep = dij.printChemin();
+            textChem.appendText(rep+"\n");
+            String val = "C'est une chemin qui mesure" + dij.valPlusCourtChemin();
+            textChem.appendText(val);
+            
+            }
         }
             
     }

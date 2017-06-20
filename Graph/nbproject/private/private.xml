@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Axel/Desktop/Graphe%20v2/Graph/src/graph/Ville.java</file>
-            <file>file:/C:/Users/Axel/Desktop/Graphe%20v2/Graph/src/graph/Graph.java</file>
-            <file>file:/C:/Users/Axel/Desktop/Graphe%20v2/Graph/src/graph/CSVreader.java</file>
-            <file>file:/C:/Users/Axel/Desktop/Graphe%20v2/Graph/src/graph/Matrice.java</file>
-            <file>file:/C:/Users/Axel/Desktop/Graphe%20v2/Graph/src/graph/Sommet.java</file>
-            <file>file:/C:/Users/Axel/Desktop/Graphe%20v2/Graph/src/graph/Graphe.java</file>
-            <file>file:/C:/Users/Axel/Desktop/Graphe%20v2/Graph/src/graph/Arc.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/vue/FXMLController.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/Ville.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/CSVReader.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/Graph.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/vue/FXML.fxml</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/visual/visuGraph.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/Dijkstra.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/Matrice.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/Arc.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/vue/NewFXMain.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/Graphe.java</file>
+            <file>file:/C:/Users/Axel/Desktop/Graphe_v2/Graph/src/graph/Sommet.java</file>
         </group>
     </open-files>
 </project-private>

@@ -72,4 +72,16 @@ public class Matrice {
         this.sommets = sommets;
     }
     
+    public Sommet getSommetbyName(String s){
+        for (int i=0; i<sommets.size(); i++){
+            System.out.println(sommets.get(i).getNom());
+            if(sommets.get(i).getNom().equals(s)){
+                System.out.println("WYT");
+                return sommets.get(i);
+            }
+        }
+        System.out.println("Le sommet "+ s+ " n'existe pas dans la matrice");
+        return null;
+    }
+    
 }
