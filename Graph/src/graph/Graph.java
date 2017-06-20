@@ -29,14 +29,30 @@ public class Graph {
 //        System.out.println(g.toString());
 
           CSVReader reader = new CSVReader();
-          ArrayList<Ville> villes = reader.getFromCSV(150000);
-          System.out.println(villes.get(0).getDistance(villes.get(1)));
-          Graphe g = new Graphe(villes, 250000);
+          //ArrayList<Ville> villes = reader.getFromCSV(150000);
+          ArrayList<Ville> villes = reader.getFromCSV();
+          //System.out.println(villes.get(0).getDistance(villes.get(1)));
+          //Graphe g = new Graphe(villes, 250000);
+          Graphe g = new Graphe(villes);
           Matrice mat = new Matrice(g);
           mat.printMat();
           
-          visuGraph vg = new visuGraph(g);
-          vg.afficher();
+
+         Dijkstra dij = new Dijkstra(mat);
+         System.out.println("Coucou");
+         Boolean[] a = new Boolean[2];
+         System.out.println(a[1]);
+         
+        dij.Chemin(mat.getSommets().get(6) , mat.getSommets().get(10));
+        dij.printChemin();
+        visuGraph vg = new visuGraph(g);
+        vg.afficher();
+        //vg.afficher(dij.getChemin());
+         
+         
+         
+         
+
     }
     
 }

@@ -136,6 +136,17 @@ public class Graphe {
             texte.append(arcCourant.toString()+"\n" );
         }
         return texte.toString();
+    }
+    
+    public Boolean contientArc(Sommet s1, Sommet s2){
+        Boolean rep = false;
+        int i =0;
+        while(i<listeArcs.size() && !rep ){
+            if(listeArcs.get(i).isEnds(s1, s2)){
+                rep = true;
+            }
         }
+        return rep;
+    }
 }
 

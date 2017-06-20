@@ -55,5 +55,21 @@ public class Matrice {
             System.out.println(impr);
         }
     }
+
+    public int[][] getMat() {
+        return mat;
+    }
+
+    public void setMat(int[][] mat) {
+        this.mat = mat;
+    }
+
+    public ArrayList<Sommet> getSommets() {
+        return sommets;
+    }
+
+    public void setSommets(ArrayList<Sommet> sommets) {
+        this.sommets = sommets;
+    }
     
 }

@@ -15,8 +15,8 @@ import java.util.ArrayList;
  */
 public class CSVReader {
     //adresse à modifier suivant l'utilisateur... Il y amoyen de le jouer plus finement
-    String adresse = "C:\\Users\\Axel\\Desktop\\Graphe_v2\\CommunesFrance.csv";
-    
+    //private String adresse = "C:\\Users\\Axel\\Desktop\\Graphe_v2\\CommunesFrance.csv";
+    private String adresse = "..\\CommunesFrance.csv";
     public ArrayList<Ville> getFromCSV(){
         return getFromCSV(0);
     }
@@ -52,5 +52,9 @@ public class CSVReader {
         
         return villes;
 
+    }
+    
+    public void setAdresse(String s){
+        adresse = s;
     }
 }

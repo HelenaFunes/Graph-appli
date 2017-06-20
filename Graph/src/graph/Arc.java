@@ -87,4 +87,8 @@ public class Arc {
         }
     }
     
+    public Boolean isEnds(Sommet s1, Sommet s2){
+        return inArc(s1) && otherSom(s1).equals(s2);
+    }
+    
 }

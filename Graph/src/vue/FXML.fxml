@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="443.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.FXMLController">
+   <children>
+      <AnchorPane layoutX="22.0" layoutY="21.0" prefHeight="131.0" prefWidth="622.0">
+         <children>
+            <TextField fx:id="textPop" layoutX="39.0" layoutY="32.0" promptText="Population minimale" />
+            <TextField fx:id="textDist" layoutX="401.0" layoutY="32.0" prefHeight="25.0" prefWidth="168.0" promptText="Distance pour arc en metre" />
+            <Label alignment="CENTER" layoutX="39.0" layoutY="2.0" prefHeight="25.0" prefWidth="149.0" text="Population minimale" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="401.0" layoutY="2.0" prefHeight="25.0" prefWidth="149.0" text="Distance pour arc en metre" />
+            <Button fx:id="butGraphNorm" layoutX="39.0" layoutY="66.0" mnemonicParsing="false" onAction="#handlebutGraphNormAction" prefHeight="47.0" prefWidth="248.0" text="Créer graphe selon ces paramètres" />
+            <TextArea fx:id="error" layoutX="315.0" layoutY="67.0" prefHeight="56.0" prefWidth="295.0" text="Ici s'affichera une éventuelle erreur" />
+            <CheckBox fx:id="affich" layoutX="257.0" layoutY="24.0" mnemonicParsing="false" text="Afficher graphe?" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="27.0" layoutY="171.0" prefHeight="244.0" prefWidth="642.0">
+         <children>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="2.0" prefHeight="25.0" prefWidth="149.0" text="Sommet de départ" />
+            <Label alignment="CENTER" layoutX="460.0" layoutY="2.0" prefHeight="25.0" prefWidth="149.0" text="Sommet d'arrivé" />
+            <Button fx:id="affSimple" layoutX="192.0" layoutY="60.0" mnemonicParsing="false" onAction="#handlebutaffSimpleAction" prefHeight="33.0" prefWidth="258.0" text="Affichage sans graphe du plus court chemin" />
+            <TextArea fx:id="textChem" layoutX="53.0" layoutY="103.0" prefHeight="67.0" prefWidth="538.0" promptText="Ici s'affichera le plus court chemin" />
+            <Button fx:id="affGraph" layoutX="78.0" layoutY="170.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="490.0" text="Affichage du graphe avec le plus court chemin en rouge" />
+            <ComboBox fx:id="choiceDep" layoutX="30.0" layoutY="27.0" prefWidth="150.0" promptText="Ville de départ" />
+            <ComboBox fx:id="choiceFin" layoutX="461.0" layoutY="24.0" prefWidth="150.0" promptText="Ville d'arrivée" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

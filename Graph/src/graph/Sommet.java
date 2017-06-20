@@ -64,5 +64,14 @@ public class Sommet {
         }
     }
     
+    public String printSom(){
+        return "Sommet "+ nom;
+    }
     
+    public Boolean isNom(String nm){
+        if(nom == nm){
+            return true;
+        }
+        return false;
+    }
 }
